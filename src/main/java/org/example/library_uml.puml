@@ -1,0 +1,38 @@
+@startuml
+class Library {
+    - Map<String, Book> books
+    - Queue<User> borrowQueue
+    - PriorityQueue<User> priorityQueue
+    + addBook(String, int)
+    + requestBook(User, String)
+    + processRequests()
+}
+
+class Book {
+    - String title
+    - int copies
+    + isAvailable(): boolean
+    + borrowBook(): void
+    + returnBook(): void
+}
+
+class User {
+    - String name
+    - int priority
+    + getName(): String
+    + getPriority(): int
+}
+
+class Student {
+    + Student(String, int)
+}
+
+class Teacher {
+    + Teacher(String)
+}
+
+Library --> Book
+Library --> User
+User <|-- Student
+User <|-- Teacher
+@enduml
