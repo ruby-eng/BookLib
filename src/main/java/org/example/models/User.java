@@ -1,6 +1,6 @@
-package org.example;
+package org.example.models;
 
-abstract class User{
+public abstract class User{
     protected String name;
     protected int priority;
     protected String requestedBook;  //so the  can be accessed b the child class
